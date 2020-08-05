@@ -1,0 +1,16 @@
+@media print { 
+    * {
+        -webkit-print-color-adjust: exact !important; 
+        color-adjust: exact !important;
+    }  
+    body{
+        margin: 0;
+        .printHidden{display: none !important;}
+        header {
+            position: static !important; display: block !important;
+            .navbar { display: block; border-width:0 !important; color: #000; }
+            header .navbar-toggle { display:none; }
+        }
+        .pageBodyContainer{ padding: 0; }  
+    }  
+}

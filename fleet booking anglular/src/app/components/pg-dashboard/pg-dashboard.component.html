@@ -1,0 +1,57 @@
+<!--pageContent starts-->
+<main id="pageContent" class="pageContent">
+
+    <!--pageTitleBox starts-->
+    <div class="pageTitleBox">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="pageTitleBoxText">Rental Booking System</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--pageTitleBox ends-->
+
+    <!--pageContentBody starts-->
+    <div class="pageContentBody dashboardBg">
+
+        <div class="container pt-5">
+
+            <!--space for messages-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="themeAlertBox themeAlertIconBox themeAlertSuccessBox" role="alert" *ngIf="successmsg">
+                        <span>Successfully saved</span>
+                        <button class="themeAlertBoxClose" type="button">
+                            <i class="material-icons">clear</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!--space for messages-->
+
+            <div class="row">
+                <div class="col-md-6">
+                    <!--themeContentBorderBox starts-->
+                    <div class="themeContentBorderBox">
+                        <div class="themeContentBorderBoxInner">
+                            <h3 class="vpFormSectionTitle">Fleet Rental Booking</h3>
+                            <p>EMO's simplified fleet rentals booking system, lets focus on what's important to our customers.</p>
+                            <button mat-stroked-button class="themeMatButton mat-primary" (click)="onViewPgRegisterBooking()" title="Create New Booking">Create New Booking</button>
+                        </div>
+                    </div>
+                    <!--themeContentBorderBox ends-->
+                </div>
+                <div class="col-md-6"> 
+                </div>
+            </div>
+        </div> 
+
+    </div>
+    <!--pageContentBody ends-->
+
+</main>
+<!--pageContent ends-->

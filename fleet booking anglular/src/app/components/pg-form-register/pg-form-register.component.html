@@ -1,0 +1,296 @@
+<!--pageContent starts-->
+<main id="pageContent" class="pageContent">
+
+    <!--pageTitleBox starts-->
+    <div class="pageTitleBox">
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="pageTitleBoxText">Fleet Rental Booking</h1>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--pageTitleBox ends-->
+
+    <!--pageContentBody starts-->
+    <div class="pageContentBody">
+        <div class="appFormPage">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+ 
+                        <div class="appFormBoxcontent">
+                            <div class="appFormBoxcontentInner">
+                                <!--FORM starts-->
+                                <form [formGroup]="fleetBooking">
+
+                                    <!--space for messages-->
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="themeAlertBox themeAlertIconBox themeAlertSuccessBox" role="alert" *ngIf="bookingSuccessMessage">
+                                                <span>Successfully saved</span>
+                                                <button class="themeAlertBoxClose" type="button">
+                                                    <i class="material-icons">clear</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--space for messages-->
+
+                                    <div class="appFormBoxTitle">
+                                        <h4>Fleet Rental Booking</h4>
+                                        <p class="themeParaSm"><span class="themeStarText">*</span> Required Fields</p> 
+                                    </div>
+
+                                    <!--themeContentBorderBox starts-->
+                                    <div class="themeContentBorderBox">
+                                        <div class="themeContentBorderBoxInner">
+                                            <h5 class="formSectionTitle">Customer Information</h5>
+                                            <div class="row formRow"> 
+                                                <div class="col-md-8">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit">
+                                                        <mat-label>Full Name</mat-label>
+                                                        <input matInput placeholder="" value="" formControlName="firstName"  maxlength="55" required />
+                                                        <mat-error *ngIf="fleetBooking.get('firstName').hasError('required')">The value is required</mat-error>
+                                                        <mat-error *ngIf="fleetBooking.get('firstName').hasError('pattern')">The value should be only alphabets</mat-error>
+                                                        </mat-form-field>
+                                                </div>
+                                            </div> 
+                                            <div class="row formRow">
+                                                <div class="col-md-8">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit">
+                                                        <mat-label>Location</mat-label>
+                                                        <input matInput placeholder="" value="" formControlName="location"  maxlength="" required />
+                                                        <mat-error *ngIf="fleetBooking.get('location').hasError('required')">The value is required</mat-error>
+                                                        <mat-error *ngIf="fleetBooking.get('location').hasError('pattern')">The value should be only alphabets</mat-error>
+                                                    </mat-form-field>
+                                                </div> 
+                                            </div>  
+                                            <div class="row formRow">
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit">
+                                                        <mat-label>Contact Number</mat-label>
+                                                        <input matInput placeholder="" value="" formControlName="contactNumber"  maxlength="10" required/>
+                                                        <mat-error *ngIf="fleetBooking.get('contactNumber').hasError('required')">The value is required</mat-error>
+                                                        <mat-error *ngIf="fleetBooking.get('contactNumber').hasError('pattern')">The value should be only digits Minimum  of 10</mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit">
+                                                        <mat-label>Alternate Contact Number</mat-label>
+                                                        <input matInput placeholder="" value="" formControlName="alternateContactNumber"  maxlength="10" />
+                                                        <mat-error *ngIf="fleetBooking.get('alternateContactNumber').hasError('pattern')">The value should be only  digits . Minimum of 10.</mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit">
+                                                        <mat-label>Email Address</mat-label>
+                                                        <input matInput placeholder="" value="" formControlName="email"  maxlength="" />
+                                                        <mat-error *ngIf="fleetBooking.get('email').hasError('email')">please enter the valid email</mat-error>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--themeContentBorderBox ends-->
+
+                                    <!--themeContentBorderBox starts-->
+                                    <div class="themeContentBorderBox">
+                                        <div class="themeContentBorderBoxInner">
+                                            <h5 class="formSectionTitle">Booking Information</h5> 
+                                            <div class="row formRow">
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit">
+                                                        <mat-label>Booking Start Date</mat-label>
+                                                        <input matInput [matDatepicker]="dobPicker1" (dateInput)="sendValueForEndDate( $event)" [min]="minDate" placeholder="Booking Start Date"  formControlName="fromDate"  class="themeMatFormField themeMatFormFieldFit" required>
+                                                        <mat-hint align="end">Date Format: MM/DD/YYYY</mat-hint>
+                                                        <mat-error *ngIf="fleetBooking.get('fromDate').hasError('required')">The value is required</mat-error>
+                                                        <mat-error *ngIf="fleetBooking.get('fromDate').invalid">Invalid format or Expired date is entered</mat-error>
+                                                        <mat-datepicker-toggle matSuffix [for]="dobPicker1"></mat-datepicker-toggle>
+                                                        <mat-datepicker #dobPicker1></mat-datepicker>
+                                                    </mat-form-field>
+                                                </div> 
+                                                
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit">
+                                                        <mat-label>Booking End Date</mat-label>
+                                                        <input matInput [matDatepicker]="dobPicker2" [min]="_endDate" placeholder="Booking End Date" formControlName="toDate" class="themeMatFormField themeMatFormFieldFit" required>
+                                                        <mat-hint align="end">Date Format: MM/DD/YYYY</mat-hint>
+                                                        <mat-error *ngIf="fleetBooking.get('toDate').hasError('required')">The value is required</mat-error>
+                                                        <mat-error *ngIf="fleetBooking.get('toDate').invalid">Invalid format or Expired date is entered</mat-error>
+                                                        <mat-datepicker-toggle matSuffix [for]="dobPicker2"></mat-datepicker-toggle>
+                                                        <mat-datepicker #dobPicker2></mat-datepicker>
+                                                    </mat-form-field>
+                                                </div>
+                                            </div>   
+                                            <hr/>  
+                                            <h5 class="pb-3">Fleet Filters</h5> 
+                                            <div class="row formRow">
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit ">
+                                                        <mat-label>Fleet Category</mat-label>
+                                                        <mat-select disableOptionCentering #cat (selectionChange)="onChangeCategory($event, cat.value)">
+                                                            <mat-option *ngFor="let category of distinctFleetCategory" [value]="category">
+                                                                {{category}}
+                                                            </mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </div> 
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit ">
+                                                        <mat-label>Fleet Brand</mat-label>
+                                                        <mat-select disableOptionCentering #brand (selectionChange)="onChangeBrand($event, brand.value)">
+                                                            <mat-option *ngFor="let brand of distinctFleetBrand" [value]="brand">
+                                                                {{brand}}
+                                                            </mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </div> 
+                                                <div class="col-md-4">
+                                                    <mat-form-field class="themeMatFormField themeMatFormFieldFit ">
+                                                        <mat-label>Fleet Model</mat-label>
+                                                        <mat-select disableOptionCentering #model (selectionChange)="onChangeModel($event, model.value)">
+                                                            <mat-option *ngFor="let model of distinctFleetModel" [value]="model">
+                                                                {{model}}
+                                                            </mat-option>
+                                                        </mat-select>
+                                                    </mat-form-field>
+                                                </div> 
+                                            </div> 
+                                            <hr/> 
+                                            <div class="tableBox">
+                                               
+                                                <table mat-table [dataSource]="dataSource" class="fleet-booking" matSort aria-label="Elements">
+
+                                                    <ng-container matColumnDef="select" >
+                                                      <th mat-header-cell *matHeaderCellDef>
+                                                        <!-- <mat-checkbox (change)="$event ? masterToggle() : null"
+                                                                    [checked]="selection.hasValue() && isAllSelected()"
+                                                                    [indeterminate]="selection.hasValue() && !isAllSelected()"
+                                                                    [aria-label]="checkboxLabel()">
+                                                        </mat-checkbox> -->
+                                                      </th>
+                                                      
+                                                      <td mat-cell *matCellDef="let row">
+                                                        <!-- <mat-checkbox 
+                                                                    (change)="$event ? selection.toggle(row) : null"
+                                                                    [checked]="selection.isSelected(row)"
+                                                                    [aria-label]="checkboxLabel(row)">
+                                                        </mat-checkbox> -->
+                                                      </td>
+                                                    </ng-container>
+                                                   
+                                                  
+                                                  
+                                                    <!-- Asset Id Column -->
+                                                    <!-- <ng-container matColumnDef="id">
+                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header>id</th>
+                                                      <td mat-cell *matCellDef="let row">{{row.id}}</td>
+                                                    </ng-container> -->
+                                              
+                                                    <!-- Fleet category Column -->
+                                                    <ng-container matColumnDef="fleet_category">
+                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Category</th>
+                                                      <td mat-cell *matCellDef="let row">{{row.fleet_category}}</td>
+                                                    </ng-container>
+                                              
+                                                    <!-- Fleet Brand Column -->
+                                                    <ng-container matColumnDef="fleet_brand">
+                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Brand</th>
+                                                      <td mat-cell *matCellDef="let row">{{row.brand}}</td>
+                                                    </ng-container>
+                                              
+                                                    <!-- Fleet Model Column -->
+                                                    <ng-container matColumnDef="model">
+                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Model</th>
+                                                      <td mat-cell *matCellDef="let row">{{row.model}}</td>
+                                                    </ng-container>
+                                              
+                                                    <!--Fleet Units Column -->
+                                                    <ng-container matColumnDef="fleet_units">
+                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Units</th>
+                                                      <td mat-cell *matCellDef="let row">{{row.fleet_units}}</td>
+                                                    </ng-container>      
+                                                    
+                                                    <!--Available Fleet Column -->
+                                                    <ng-container matColumnDef="Available_fleets">
+                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header>Available_fleets</th>
+                                                      <td mat-cell *matCellDef="let row">{{row.AvailableFleets}}</td>
+                                                    </ng-container> 
+                                              
+                                                    <!--Book Required Column -->
+                                                    <ng-container matColumnDef="book_required">
+                                                      <th mat-header-cell *matHeaderCellDef>Book_required</th>
+                                                      <td mat-cell *matCellDef="let row; let i = index">
+                                                        <mat-form-field appearance="fill">
+                                                          <input matInput    type = 'number' #enteredFleet  [value] = "row.enteredValue"  pattern="[0-9]" oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');" (change)="onEnteringRequiredFleetQuantity(i, row, enteredFleet.value)"  [min] ="1" [max]="row.AvailableFleets" >
+                                                          <!-- <mat-error *ngIf="fleetBooking.get('bookQuantity').hasError('required')">The value is required</mat-error> -->
+                                                        </mat-form-field>
+                                                      </td>
+                                                    </ng-container>
+                                                    
+                                                    <!--BusinessId of Asset Column -->
+                                                    <!-- <ng-container matColumnDef="business_id">
+                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header>business_id</th>
+                                                      <td mat-cell *matCellDef="let row">{{row.business_id}}</td>
+                                                    </ng-container> -->
+                                              
+                                                    <!--BusinessName of Asset Column -->
+                                                    <ng-container matColumnDef="Business Name">
+                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header>BusinessName</th>
+                                                      <td mat-cell *matCellDef="let row">{{row.BusinessName}}</td>
+                                                    </ng-container>
+                                              
+                                                    <!-- Business Contact Column -->
+                                                    <ng-container matColumnDef="Contact Number">
+                                                      <th mat-header-cell *matHeaderCellDef mat-sort-header>PhoneNumber</th>
+                                                      <td mat-cell *matCellDef="let row">{{row.PhoneNumber}}</td>
+                                                    </ng-container>
+                                              
+                                              
+                                                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                                                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"    (click)="selection.toggle(row)">
+                                                    </tr>
+                                              
+                                                  </table>
+                                              
+                                                  <mat-paginator #paginator
+                                                      [length]="dataSource?.data.length"
+                                                      [pageIndex]="0"
+                                                      [pageSize]="5"
+                                                      [pageSizeOptions]="[5, 10, 15, 20]">
+                                                  </mat-paginator>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--themeContentBorderBox ends--> 
+
+                                    <div class="themeFormButtonBox clearfix">
+                                        <div class="row">
+                                            <div class="col-md-12 text-right">
+                                                <button mat-stroked-button class="themeMatButton mat-default ml-3" (click)="onViewPgDashboard()" title="Cancel">Cancel</button>
+                                                <button mat-stroked-button class="themeMatButton mat-primary ml-3" [disabled]="!fleetBooking.valid || !enableButton" (click)="onSubmit()" title="Submit">Submit</button> 
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+                                <!--FORM ends-->
+                            </div>
+                        </div> 
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--pageContentBody ends-->
+
+</main>
+<!--pageContent ends-->

@@ -1,0 +1,143 @@
+<!--pageContent starts-->
+<main id="pageContent" class="pageContent">
+
+        <!--pageTitleBox starts-->
+        <div class="pageTitleBox">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1 class="pageTitleBoxText">Fleet Booking Details</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--pageTitleBox ends-->
+    
+        <!--pageContentBody starts-->
+        <div class="pageContentBody">
+    
+            <!--viewMemberCtBox starts-->
+            <div class="container">
+
+                    
+                <div class="row">
+                    <div class="col-md-12">
+    
+                        <div class="viewMemberCtBox themeForm themeClearForm">
+                            
+    
+                            <!--themeContentTransparentBox starts-->
+                            <div class="themeContentTransparentBox">
+                                <div class="themeContentTransparentBoxInner clearfix">
+                                    <h2 class="text-center pb-3">Fleet Booking Details</h2>
+                                </div>
+                                <!--space for messages--> 
+                                <div class="themeAlertBox themeAlertIconBox themeAlertSuccessBox" role="alert">
+                                    <span>Successfully Booked</span>
+                                    <button class="themeAlertBoxClose" type="button">
+                                        <i class="material-icons">clear</i>
+                                    </button>
+                                </div> 
+                                <!--space for messages-->
+                                <div class="row formRow">
+                                    <div class="col-md-12 formRowUnit">
+                                        <p class="themePara clearPara text-right pt-3 pb-3">
+                                            <button mat-stroked-button class="themeMatButton mat-primary ml-3" onclick="window.print()" title="Print" >Print</button> 
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--themeContentTransparentBox ends--> 
+    
+                            <!--themeContentBorderBox starts-->
+                            <div class="themeContentBorderBox">
+                                <div class="themeContentBorderBoxInner">
+                                    <h3 class="vpFormSectionTitle">Customer Information</h3>
+                                    <div class="row formRow"> 
+                                        <div class="col-md-12">
+                                            <p class="vpPara vpParaSingleLine">
+                                                <span class="vpParaLabel">Name :</span>
+                                                <span class="vpParaTextValue">{{data[0].customer_name}}</span>
+                                            </p>
+                                            <p class="vpPara vpParaSingleLine">
+                                                <span class="vpParaLabel">Address / Location :</span>
+                                                <span class="vpParaTextValue">{{data[0].location}}</span>
+                                            </p>
+                                            <p class="vpPara vpParaSingleLine">
+                                                <span class="vpParaLabel">Contact Number :</span>
+                                                <span class="vpParaTextValue">{{data[0].customer_contactNo}}</span>
+                                            </p>
+                                            <p class="vpPara vpParaSingleLine">
+                                                <span class="vpParaLabel">Alternate Contact Number :</span>
+                                                <span class="vpParaTextValue">{{data[0].customer_alternateNo}}</span>
+                                            </p>
+                                            <p class="vpPara vpParaSingleLine">
+                                                <span class="vpParaLabel">Email Address:</span>
+                                                <span class="vpParaTextValue">
+                                                    <a href="mailto:email@email.com" title="email@email.com">{{data[0].email}}</a>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--themeContentBorderBox ends-->
+    
+                            <!--themeContentBorderBox starts-->
+                            <div class="themeContentBorderBox">
+                                <div class="themeContentBorderBoxInner">
+                                    <h3 class="vpFormSectionTitle">Booking Information</h3>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <p class="vpPara vpParaSingleLine">
+                                                <span class="vpParaLabel">Booked From :</span>
+                                                <span class="vpParaTextValue">{{data[0].from_date | date:'longDate'}}</span>
+                                            </p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p class="vpPara vpParaSingleLine">
+                                                <span class="vpParaLabel">Booked Till :</span>
+                                                <span class="vpParaTextValue">{{data[0].to_date | date:'longDate'}}</span>
+                                            </p>
+                                        </div>
+                                    </div> 
+                                </div>
+                            </div>
+                            <!--themeContentBorderBox ends--> 
+    
+                            <!--themeContentBorderBox starts-->
+                            <div class="themeContentBorderBox">
+                                <div class="themeContentBorderBoxInner"> 
+
+                                    <div class="row">
+                                        <div class="col-md-6 vpPrgSitesBox" *ngFor="let fleetCategory of distinctFleetcategory;let i =index;">
+                                            <div class="vpPrgSitesBoxInner">
+                                                <p class="vpPara vpParaSingleLine">
+                                                    <span class="vpParaLabel">{{fleetCategory.fleet_category}}</span>
+                                                </p>
+                                                <ol>
+                                                    <li *ngFor="let fleetsUnderCategory of fleetCategory.details" > {{"Brand: "+ fleetsUnderCategory.fleet_brand+",&nbsp; &nbsp; &nbsp; "+"Model :"+fleetsUnderCategory.fleet_model+",&nbsp; &nbsp; &nbsp;      Units Booked: "+fleetsUnderCategory.booked_quantity}} </li>
+                                                </ol> 
+                                            </div>
+                                        </div>
+                                    
+                                    </div>
+
+                                    
+    
+                                </div>
+                            </div>
+                            <!--themeContentBorderBox ends--> 
+    
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+            <!--viewMemberCtBox ends-->
+    
+        </div>
+        <!--pageContentBody ends-->
+    
+    </main>
+    <!--pageContent ends-->

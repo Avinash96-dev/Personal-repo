@@ -1,0 +1,22 @@
+<header class="pgHeader fixed-top">
+    <div class="clearfix"> 
+ 
+        <!-- Navigation starts-->
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+            <div class="container"> 
+                <a href="javascript:void(0);" class="navbar-brand" title="" routerLink="index" routerLinkActive="active">
+                    <img class="pgHeaderLogo" src="assets/images/emo-Logo.png"  title="emo india" alt="emo india" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive"
+                    aria-expanded="false" aria-label="Toggle navigation" ng-click="navCollapsed = !navCollapsed">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive" collapse="navCollapsed">
+                    <p class="headerTimeStamp ml-auto">{{nowDatetime | date:'longDate'}} {{nowDatetime | date:'shortTime'}}</p>
+                </div> 
+            </div>
+        </nav>
+    <!-- Navigation ends-->
+ 
+    </div>
+</header>
