@@ -1,0 +1,69 @@
+//---------------------upload file - in laravel
+$file=$request->file('image');
+            $file->move(public_path().'/UploadImage',$file->getClientOriginalName());
+            $customername = $file->getClientOriginalName();
+            $uploadname = Emo_personalinfo::create([
+                'uploadfile'=> $customername
+            ]);
+            return response()->json($customername,200);
+
+
+
+
+  //------------jus update business without adding new
+    update businessname and gst
+                    // $updatebusinessarray = $request->input('addmorebusiness');
+                    // $updateCustomerBusiness= Emo_business::where('personal_id',$id)->get();
+                    // foreach($updateCustomerBusiness as $key =>$business){
+                    //     $request_data = $request->addmorebusiness[$key];
+                    //     $business->gst = $request_data['gst'];
+                    //     $business->businessName = $request_data['businessName'];
+                    //     $business->save();
+                    // }
+
+
+//guzzletry
+use Illuminate\Http\Request;
+use GuzzleHttp\Client;
+
+public function getSamples()
+    {
+        //return "hello";
+        try{
+            $data = new \GuzzleHttp\Client([
+                'base_uri' => 'http://guzzletry.test:3000'
+            ]);
+            $response = $data->request('GET' , '/samples');
+            echo 'I completed! ' . $response->getBody();
+        } catch(\GuzzleHttp\Exception\BadResponseException $e) {
+            return'wrong';
+        }
+
+
+
+        public function guzzletry(Request $request)
+    {
+        $document = $request->file('document');
+        $filename = file_get_contents($document -> getRealPath());
+        return ($filename);
+
+        // dd($filename) ;
+        // dd('success');   //  path: "C:\xampp\tmp"    
+        $client = new Client([
+            'base_uri' => 'http://guzzletry.test:3000/',
+        
+        ]);
+
+        $client->request('POST', 'uploadguzzle',[                
+            // 'headers' => [ 'Content-Type' => 'multipart/form-data'],
+            'multipart' => 
+            [
+                'contents' => fopen('C:\xampp\tmp'.$filename,'r'),
+                'document' =>  $document
+            ] 
+        ]);
+    }
+
+
+
+            
