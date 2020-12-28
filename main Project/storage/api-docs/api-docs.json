@@ -1,0 +1,459 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "EmoIndia",
+        "contact": {
+            "name": "Support Team",
+            "email": "support@emoindia.com"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/formOne": {
+            "post": {
+                "tags": [
+                    "Emo_registration"
+                ],
+                "operationId": "/formOne",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FormOne"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request."
+                    }
+                }
+            }
+        },
+        "/formTwo/{id}": {
+            "post": {
+                "tags": [
+                    "Emo_registration"
+                ],
+                "operationId": "/formTwo/{id}",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Some optional other parameter",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/FormTwo"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Success",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request"
+                    }
+                }
+            }
+        },
+        "/viewpage/{id}": {
+            "get": {
+                "tags": [
+                    "Emo_registration"
+                ],
+                "operationId": "/viewpage/{id}",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Some optional other parameter",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Error: Bad request. ."
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "FormOne": {
+                "title": "registration formOne",
+                "description": "registration request body data",
+                "required": [
+                    "name"
+                ],
+                "properties": {
+                    "title": {
+                        "title": "title",
+                        "description": "Title of person",
+                        "type": "string",
+                        "example": "Mr"
+                    },
+                    "fullname": {
+                        "title": "fullname",
+                        "description": "Name of the customer",
+                        "type": "string",
+                        "example": "Kishore"
+                    },
+                    "birthDate": {
+                        "title": "birthDate",
+                        "description": "Customer's dob",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 29111997
+                    },
+                    "pan": {
+                        "title": "pan",
+                        "description": "Customer's pan card number",
+                        "type": "string",
+                        "example": "aybpt1656n"
+                    },
+                    "aadhaar": {
+                        "title": "aadhaar",
+                        "description": "Customer's Aadhaar card number",
+                        "type": "integer",
+                        "example": 983672341234
+                    },
+                    "address1": {
+                        "title": "address1",
+                        "description": "Customer's address line1",
+                        "type": "string",
+                        "example": "44,labour colony4th street"
+                    },
+                    "address2": {
+                        "title": "address2",
+                        "description": "Customer's address line2",
+                        "type": "string",
+                        "example": "Ekkatuthangal"
+                    },
+                    "landmark": {
+                        "title": "landmark",
+                        "description": "Landmark of customer's address",
+                        "type": "string",
+                        "example": "Near ICICI bank"
+                    },
+                    "city": {
+                        "title": "city",
+                        "description": "Name of city",
+                        "type": "string",
+                        "example": "chennai"
+                    },
+                    "state": {
+                        "title": "state",
+                        "description": "Name of State",
+                        "type": "string",
+                        "example": "Tamilnadu"
+                    },
+                    "pincode": {
+                        "title": "pincode",
+                        "description": "pincode od city",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 600019
+                    },
+                    "email": {
+                        "title": "email",
+                        "description": "Customer's Email address",
+                        "type": "string",
+                        "example": "kishore98@gmail.com"
+                    },
+                    "phoneNumber": {
+                        "title": "phoneNumber",
+                        "description": "Customer's Mobile Number",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 9998766477
+                    },
+                    "alternatenumber": {
+                        "title": "alternatenumber",
+                        "description": "Customer's Alternate Mobile Number",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 9998766499
+                    },
+                    "insurance_detail": {
+                        "title": "insurance_detail",
+                        "description": "Customer's Insurance number",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 231443
+                    },
+                    "insurance_name": {
+                        "title": "insurance_name",
+                        "description": "Name of Insurance Company",
+                        "type": "string",
+                        "example": "New India Assurance company"
+                    },
+                    "car_details": {
+                        "title": "car_details",
+                        "description": "Name of car",
+                        "type": "string",
+                        "example": "Bmw"
+                    },
+                    "bike_details": {
+                        "title": "bike_details",
+                        "description": "Name of bike",
+                        "type": "string",
+                        "example": "yamaha"
+                    },
+                    "addmorebusiness": {
+                        "type": "array",
+                        "items": {
+                            "properties": {
+                                "businessName": {
+                                    "type": "string"
+                                },
+                                "gst": {
+                                    "type": "string"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                },
+                "type": "object"
+            },
+            "FormTwo": {
+                "title": "registration formTwo ",
+                "description": "registration request body data",
+                "properties": {
+                    "businessName": {
+                        "title": "businessName",
+                        "description": "Name of businessname",
+                        "type": "string",
+                        "example": "Aathi Earth Movers"
+                    },
+                    "gst": {
+                        "title": "gst",
+                        "description": "customer's Gst Number",
+                        "type": "string",
+                        "example": "22ASDFR1234N1Z5"
+                    },
+                    "pan": {
+                        "title": "pan",
+                        "description": "Customer's pan card number",
+                        "type": "string",
+                        "example": "aybpt1656n"
+                    },
+                    "it_status": {
+                        "title": "it_status",
+                        "description": "Customer's It status",
+                        "type": "string",
+                        "example": "It Status"
+                    },
+                    "it_others": {
+                        "title": "it_others",
+                        "description": "Customer's It others ",
+                        "type": "string",
+                        "example": "It others"
+                    },
+                    "contact_person": {
+                        "title": "contact_person",
+                        "description": "Name of contact person",
+                        "type": "string",
+                        "example": "Aathi"
+                    },
+                    "designation": {
+                        "title": "designation",
+                        "description": "Designation of contact person",
+                        "type": "string",
+                        "example": "Manager"
+                    },
+                    "businessAddress1": {
+                        "title": "businessAddress1",
+                        "description": "Business addressline1 of customers",
+                        "type": "string",
+                        "example": "44/12,sarangapani street"
+                    },
+                    "businessAddress2": {
+                        "title": "businessAddress2",
+                        "description": "Business addressline2 of customers",
+                        "type": "string",
+                        "example": "T.nagar"
+                    },
+                    "landmark": {
+                        "title": "landmark",
+                        "description": "Landmark of customer's address",
+                        "type": "string",
+                        "example": "Archana Apartment"
+                    },
+                    "City": {
+                        "title": "City",
+                        "description": "Name of city",
+                        "type": "string",
+                        "example": "chennai"
+                    },
+                    "State": {
+                        "title": "State",
+                        "description": "Name of State",
+                        "type": "string",
+                        "example": "Tamilnadu"
+                    },
+                    "pincode": {
+                        "title": "pincode",
+                        "description": "pincode od city",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 600034
+                    },
+                    "Email": {
+                        "title": "Email",
+                        "description": "Business Email address",
+                        "type": "string",
+                        "example": "Aathi98@gmail.com"
+                    },
+                    "PhoneNumber": {
+                        "title": "phoneNumber",
+                        "description": "Customer's Mobile Number",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 9988556433
+                    },
+                    "Alternatenumber": {
+                        "title": "Alternatenumber",
+                        "description": "Customer's Alternate Mobile Number",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": 9988556456
+                    },
+                    "bank_name": {
+                        "title": "bank_name",
+                        "description": "Name of bank",
+                        "type": "string",
+                        "example": "HDFC Bank"
+                    },
+                    "branch_name": {
+                        "title": "branch_name",
+                        "description": "Name of bankbranch",
+                        "type": "string",
+                        "example": "T.nagar"
+                    },
+                    "account_type": {
+                        "title": "account_type",
+                        "description": "Name of Account type",
+                        "type": "string",
+                        "example": "Savings"
+                    },
+                    "account_no": {
+                        "title": "account_no",
+                        "description": "Account number of customer",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": "65435322432"
+                    },
+                    "ifsc_code": {
+                        "title": "ifsc_code",
+                        "description": "IFSC code of customer",
+                        "type": "string",
+                        "format": "int64",
+                        "example": "HDFC1234567"
+                    },
+                    "od_cc_details": {
+                        "title": "od_cc_details",
+                        "description": "od cc details of customer",
+                        "type": "string",
+                        "example": "od cc details"
+                    },
+                    "loan_details": {
+                        "title": "loan_details",
+                        "description": "loan details of customers",
+                        "type": "string",
+                        "example": "personal loan"
+                    },
+                    "fleet_units": {
+                        "title": "fleet_units",
+                        "description": "Number of fleets",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": "1"
+                    },
+                    "fleet_category": {
+                        "title": "fleet_category",
+                        "description": "Name of fleet",
+                        "type": "string",
+                        "example": "Backhoe"
+                    },
+                    "brand": {
+                        "title": "brand",
+                        "description": "Name of fleet brand",
+                        "type": "string",
+                        "example": "case"
+                    },
+                    "model": {
+                        "title": "model",
+                        "description": "Name of fleet model",
+                        "type": "string",
+                        "example": "CASE12H6"
+                    },
+                    "year_of_mfg": {
+                        "title": "year_of_mfg",
+                        "description": "year of manufacturing",
+                        "type": "integer",
+                        "format": "int64",
+                        "example": "2008"
+                    },
+                    "finance": {
+                        "title": "finance",
+                        "description": "Fleet finance",
+                        "type": "string",
+                        "example": "finance"
+                    },
+                    "insurance_name": {
+                        "title": "insurance_name",
+                        "description": "Name of Insurance Name",
+                        "type": "string",
+                        "example": "Bajaj insurance"
+                    },
+                    "remarks": {
+                        "title": "remarks",
+                        "description": "Remarks",
+                        "type": "string",
+                        "example": "Remarks"
+                    }
+                },
+                "type": "object"
+            }
+        }
+    }
+}
