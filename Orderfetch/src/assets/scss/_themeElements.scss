@@ -1,0 +1,322 @@
+
+/* ======================================================================
+   Common Elements / Components
+   ====================================================================== */  
+/*============ theme Containers ============*/   
+.themeContentGreyBox {
+	margin-bottom:15px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	border:1px solid #ddd;
+	clear:both;
+	border-radius:8px;
+	.themeContentGreyBoxInner {
+		padding: 15px;
+		background:#f5f5f5; 
+		border-radius:8px;
+	}
+}
+/*----*/
+.themeContentBorderBox {
+	margin-bottom:15px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	border:1px solid #ddd;
+	clear:both;
+	border-radius:8px;
+	.themeContentBorderBoxInner {
+		padding: 15px;
+		background:#ffffff; 
+		border-radius:8px;
+	}
+}
+/*----*/
+/*----*/
+.themeContentWhiteBox {
+	margin-bottom:15px;
+	-webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+	border:1px solid #ddd;
+	clear:both;
+	border-radius:8px;
+	.themeContentWhiteBoxInner {
+		padding: 15px;
+		background:#ffffff; 
+		border-radius:8px;
+	}
+}
+/*----*/
+.themeContentTransparentBox {
+	margin-bottom:15px;
+	border:1px solid transparent;
+	clear:both;
+	border-radius:8px;
+	.themeContentTransparentBoxInner {
+		padding: 15px;
+		background:transparent; 
+		border-radius:8px;
+	}
+}
+/*----*/
+
+/*============ theme Alert - Elements ============*/  
+.themeAlertBox{
+    border-radius: 4px;
+    margin-bottom: 16px;
+	padding:8px 35px 8px 8px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); 
+	position:relative;	
+    font: 1.1rem/1.5  'Roboto Condensed', sans-serif; 
+}
+	.themeAlertBox.themeAlertNoControls{
+    padding-right: 8px;
+	}
+	.themeAlertBox.themeAlertMrgClr{
+    margin-bottom: 10px;
+	}
+	.themeAlertBox.themeAlertIconBox{
+	padding:8px 35px 8px 34px;
+	}
+		.themeAlertErrorBox{
+		background:#F2DEDE;
+		border: 1px solid #EED3D7;
+		color: #B94A48;
+		}
+		.themeAlertSuccessBox{
+		background:#E6FFE6; 
+		border: 1px solid #B3FFB3;
+		color: green;
+		}
+		.themeAlertWarningBox{
+		background:#FEEFB3;
+		border: 1px solid #FCD537;
+		color: #575757;
+		}
+		.themeAlertInfoBox{
+		background:#f4f8fc;
+		border: 1px solid #a3d6ff;
+		color: #4276ab;
+		}
+		
+		.themeAlertErrorBox.themeAlertIconBox{
+		background: url('/assets/images/cssImages/themeAlertErrorBg.png') no-repeat 12px 14px #F2DEDE;
+		}
+		.themeAlertSuccessBox.themeAlertIconBox{
+		background: url('/assets/images/cssImages/themeAlertSuccessBg.png') no-repeat 10px 14px #E6FFE6; 
+		}
+		.themeAlertWarningBox.themeAlertIconBox{
+		background: url('/assets/images/cssImages/themeAlertWarningBg.png') no-repeat 9px 10px #FEEFB3;
+		}
+		.themeAlertInfoBox.themeAlertIconBox{
+		background: url('/assets/images/cssImages/themeAlertInfoBg.png') no-repeat 14px 9px #f4f8fc;
+		}
+		 
+		.themeSoftAlertErrorBox{
+		border: 1px solid #cc0000;
+		color: #B94A48;
+		}
+		.themeSoftAlertSuccessBox{
+		border: 1px solid #B3FFB3;
+		color: green;
+		}
+		.themeSoftAlertWarningBox{
+		border: 1px solid #FCD537;
+		color: #FFFFFF;
+		}
+.themeAlertBox ul{
+	margin:0;
+	padding:0;
+}
+button.themeAlertBoxClose{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 0 none;
+    cursor: pointer;
+    padding: 0;
+	position:absolute; right:0; top:1px; z-index:1; 
+	width:32px;	height:35px;
+    color: #000000;   
+    opacity: 0.5;
+    -moz-opacity: 0.5; 
+    -khtml-opacity: 0.5; 
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; 
+	/* filter: alpha(opacity=50); */ 
+	i{
+		vertical-align: middle;
+	}
+} 
+/*--------*/
+/*============ theme form - Elements ============*/ 
+.themeForm{
+	clear:both; 
+    color: #4b4b4b; 
+    font: 1rem/1.6rem 'Roboto', sans-serif;
+    margin: 0 0 16px 0;
+}
+	.themeForm.themeClearForm{
+		padding:0; 
+		margin:0;
+	}
+		.themeForm .formRow, .formRow{
+			margin-bottom:16px;
+		}
+		.themeForm .formRow.formRowClear, .formRow.formRowClear{
+			margin-bottom:0;
+		} 
+		.themeForm .formRow:last-child{
+			margin-bottom:0;
+		}
+.themeForm label,
+.labelFormatText {
+    color: #4b4b4b;
+    cursor: default;
+    display: block;
+    font: 1rem/1.5rem 'Roboto Condensed', sans-serif;
+    min-height: 1.5rem;
+	margin-bottom: 6px;
+	}	
+	.labelFormatSpacer{
+		min-height: 1.5rem;
+		margin-bottom: 6px;
+	}
+	.labelNotesText{
+		font-size:10px;
+		padding-left:3px;
+		line-height:1;
+	}
+	.fieldFormatText{
+		font: 16px/36px 'Roboto', sans-serif;
+		word-wrap: break-word;
+		color:#4b4b4b;
+	}
+
+.fieldLabelInlineTextBox{
+	margin-bottom: 8px;
+	}
+.fieldLabelInlineTextBox .labelFormatText{
+		font: 16px/22px 'Roboto', sans-serif;
+		word-wrap: break-word;
+		margin:0;
+	}
+.fieldLabelInlineTextBox .fieldFormatText{
+		margin:0;
+		font: 16px/22px 'Roboto', sans-serif;
+	}
+	
+input[disabled], select[disabled], textarea[disabled],   
+input[readonly], select[readonly], textarea[readonly],
+input[disabled]:focus, select[disabled]:focus, textarea[disabled]:focus,   
+input[readonly]:focus, select[readonly]:focus, textarea[readonly]:focus {
+	color:#949191;
+	cursor: not-allowed;
+	border-color:transparent transparent #c8c8c8 transparent; 
+	background:transparent !important;
+    }
+/*--------*/
+.themeFormButtonBox{
+    clear:both;
+	padding: 1.5rem 0;
+	button{
+		margin-bottom: 12px;
+	}
+}
+/*--------*/
+.formBtnGroup .btn,
+.modal-dialog .formBtnGroup .btn{
+	margin-left:10px;
+	}
+	.formBtnGroup .btn:first-child,
+	.modal-dialog .formBtnGroup .btn:first-child{
+	margin:0;
+	}
+/*--------*/
+.themeFormError {
+    color: #f44336;
+    font: 0.8rem/1rem 'Roboto', sans-serif; 
+	clear:both;
+}
+.themeInfoText, .themeHelpText {
+    color: #4b4b4b;
+    font: 0.8rem/1rem 'Roboto', sans-serif; 
+	clear:both;
+}
+.themeStarText{
+    color: #f44336; 
+    padding-top:2px; 
+}
+/*============ theme table - Elements ============*/ 
+   .themeTable{
+	clear:both;
+	border:none;
+	color:#3a3734;
+	font: 1rem/1.5 'Roboto', sans-serif;
+	margin:0;
+	width: 100%;
+	}
+	.themeTable.themeFixedTable{
+	table-layout: fixed;
+	}
+	.themeTableText{
+	color:#3a3734;
+	font: 0.9rem/1.5 'Roboto', sans-serif;
+	display:inline-block; 
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+	}
+	.themeTableText.themeTableMultiLineText{
+    white-space:normal;
+	line-height:20px;
+	padding:7px 0;
+	}
+	.themeTable tr.themeAlertRow .themeTableText{
+	color:#cc0000;
+	}
+	.themeTable .themeTableText.themeTableAlertText{
+	color:#cc0000;
+	}
+.themeTable thead{
+	background:#f1f1f1;
+	border-bottom:2px solid #eee;
+	}
+.themeTable tfoot{
+	background:none;
+	border-top:2px solid #eee;
+	}
+.themeTable thead>tr>th {
+	font: 1.1rem/30px 'Roboto Condensed', sans-serif;
+	color:#434547;
+	vertical-align:middle;
+	}
+.table.themeTable>thead>tr>th, .table.themeTable>tbody>tr>td{
+	padding:8px 8px;
+}
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, 
+.table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+	border:none;
+	}
+	.table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td{
+	min-height:30px;
+	line-height:1;
+	}
+	/*.table-hover>tbody>tr:hover>td, .table-hover>tbody>tr:hover>th{
+	background:#f5f5f4;
+	}*/
+.themeTable tr {
+	border-left:1px solid transparent;
+	border-bottom:1px solid transparent; 
+	}
+.themeTable tbody tr:hover{ 
+    background: #755353;
+	}	
+.themeTable tr td .formCkbxRdUnit{
+	padding:8px 0 4px 0;
+	} 
+
+.themeTable tbody tr:nth-child(odd) {background:#f7f7f7}
+.themeTable tbody tr:nth-child(even) {background: #f1f1f1}
+.themeTableSortIcon{
+	padding:0 3px;
+	cursor:pointer;
+}
+/*------------*/ 

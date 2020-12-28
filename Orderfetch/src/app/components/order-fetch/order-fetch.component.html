@@ -1,0 +1,161 @@
+
+ <div class="pageTitleBox">
+  <div class="container">
+
+      <div class="row">
+          <div class="col-md-10">
+              <h1 class="pageTitleBoxText">Customer Order Details</h1>
+           </div>
+           <div class="col-md-2" >
+              <button class="btn btn-light" title="Logout" (click)="logout()"><b>Logout</b></button>
+           </div>
+          
+      </div>
+
+  </div>
+</div>
+<form [formGroup]="orderfetch">
+
+
+    <div class="themeContentBorderBox">
+        <div class="themeContentBorderBoxInner">
+            <h5 class="formSectionTitle">Fetch Order By Date</h5> 
+            <div class="row formRow">
+                <div class="col-md-4">
+    
+                    <mat-form-field appearance="fill">
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="orderfetchpicker"  [max]="maxDate" formControlName="dateFetch" >
+                        <mat-datepicker-toggle matSuffix [for]="orderfetchpicker"></mat-datepicker-toggle>
+                        <mat-datepicker #orderfetchpicker></mat-datepicker>
+                      </mat-form-field>
+    
+    
+                      <div class="themeFormButtonBox clearfix">
+                        <div class="row">
+                            <div class="col-md-12 text-right">
+                                <button mat-stroked-button class="themeMatButton mat-primary ml-3"  (click)="onOrderFetch()" title="order">Fetch Order List</button>  
+                                <button mat-stroked-button class="themeMatButton mat-primary ml-3"  (click)="onUserFetch()" title="order">Fetch User List</button>  
+    
+                            </div>
+                        </div>
+                        <div>
+                          <div class="alert alert-danger" *ngIf="noDataalert" >{{noRecords }} </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+    
+    
+    <div *ngIf = "orderTable">
+    <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <!-- Position Column -->
+        <ng-container matColumnDef="position">
+          <mat-header-cell *matHeaderCellDef> No </mat-header-cell>
+          <mat-cell *matCellDef="let element; let i = index;"> {{ (i+1) + (paginator1.pageIndex * paginator1.pageSize) }}  </mat-cell>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="order_ID">
+          <mat-header-cell *matHeaderCellDef> order ID </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.order_ID}} </mat-cell>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="Customer_Name">
+          <mat-header-cell *matHeaderCellDef> Customer Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.Customer_Name}} </mat-cell>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="Customer_Mobile_Number">
+          <mat-header-cell *matHeaderCellDef> Customer Mobile Number </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.Customer_Mobile_Number}} </mat-cell>
+        </ng-container>
+    
+        <ng-container matColumnDef="Delivery_State">
+            <mat-header-cell *matHeaderCellDef> Delivery State </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.Delivery_State}} </mat-cell>
+          </ng-container>
+      
+          <ng-container matColumnDef="Name">
+            <mat-header-cell *matHeaderCellDef> Product Name </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.Name}} </mat-cell>
+          </ng-container>
+    
+          <ng-container matColumnDef="Quantity">
+            <mat-header-cell *matHeaderCellDef> Quantity </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.Quantity}} </mat-cell>
+          </ng-container>
+        
+          <ng-container matColumnDef="Price">
+            <mat-header-cell *matHeaderCellDef> Price </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.Price}} </mat-cell>
+          </ng-container>
+        
+      
+        <mat-header-row *matHeaderRowDef="displayedOrderColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedOrderColumns;"></mat-row>
+      </mat-table>
+      <mat-paginator #paginator1
+            [length]="dataSource?.data.length"
+            [pageIndex]="0"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 15, 20]">
+        </mat-paginator>
+      </div>
+
+      <div *ngIf = "userTable">
+    
+        <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+            <!-- Position Column -->
+            <ng-container matColumnDef="position">
+              <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+              <mat-cell *matCellDef="let element; let i = index;"> {{ (i+1) + (paginator2.pageIndex * paginator2.pageSize) }} </mat-cell>
+            </ng-container>
+          
+            <!-- Name Column -->
+            <ng-container matColumnDef="FullName">
+              <mat-header-cell *matHeaderCellDef> Full Name </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.FullName}} </mat-cell>
+            </ng-container>
+          
+            <!-- Weight Column -->
+            <ng-container matColumnDef="Registered_Mobile_Number">
+              <mat-header-cell *matHeaderCellDef> Registered Mobile Number </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.Registered_Mobile_Number}} </mat-cell>
+            </ng-container>
+          
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="State">
+              <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+              <mat-cell *matCellDef="let element"> {{element.State}} </mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="Registered_Date">
+                <mat-header-cell *matHeaderCellDef> Registered Date </mat-header-cell>
+                <mat-cell *matCellDef="let element"> {{element.Registered_Date}} </mat-cell>
+              </ng-container>
+          
+              
+          
+            <mat-header-row *matHeaderRowDef="displayedUserColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedUserColumns;"></mat-row>
+          </mat-table>
+    
+        <mat-paginator #paginator2
+            [length]="dataSource?.data.length"
+            [pageIndex]="0"
+            [pageSize]="5"
+            [pageSizeOptions]="[5, 10, 15, 20]">
+        </mat-paginator>
+        
+      </div>
+      
+    
+     
+                
+    

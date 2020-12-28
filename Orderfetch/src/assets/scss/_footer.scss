@@ -1,0 +1,47 @@
+/* ======================================================================
+   Footer
+   ====================================================================== */  
+.pgFooter {  
+    border-top: 2px solid #ddd; 
+    background: #222222;
+    p{
+    color: #ccc;
+    }
+    a, a:hover{
+        color: #ccc; 
+    }
+    .pgFooterTop{
+        background: #f6b60b;
+        padding:16px 0; 
+    }
+    .pgFooterBottom{
+        background: #222222;
+        padding:12px 0; 
+    }
+} 
+.footerMenuLinks{
+    list-style: none; 
+    margin: 0.7rem 0 0 0;
+    display: flex;
+    flex-direction: row;
+    li{ 
+    padding:0 1rem 0 0;
+    border-right: 2px solid #ddd;
+    margin-right: 1rem; 
+        &:last-child {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+        a {
+            font-size: 0.95rem;
+            color: #ccc;
+            line-height: 1;
+            &:hover{
+                color: #ccc;
+                text-decoration: underline;
+            }
+        }
+    }
+}   
+/*=====Footer ends=====*/

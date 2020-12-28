@@ -1,0 +1,155 @@
+.dashboardBg{
+    background: url(/customer/assets/images/brandMachineBg.png) no-repeat left bottom;
+    background-size: 100% auto;
+    padding: 0 0 350px 0; 
+}
+/* ======================================================================
+   Form - Common
+   ====================================================================== */
+.formSectionTitle{
+    background: #f5f5f5;
+    color: #222;
+    padding: 8px;
+    margin: 0 0 15px 0;
+    font: 1.4rem/1.4 'Roboto Condensed', sans-serif;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    i{
+        font-size: 2rem;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+}
+.formSectionSubTitle{
+    text-transform: uppercase;
+    padding: 0.6rem 0; 
+    margin: 0;
+    color: #222;
+    font: 1.1rem/1.4 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.02rem;
+} 
+/* ======================================================================
+Form Page - Common
+====================================================================== */
+ 
+.appFormBoxcontent{ 
+    padding: 15px 0;
+    width: 100%;   
+}
+    .appFormBoxcontentInner{
+        padding: 0 0 60px 0;
+    }
+.appFormBoxTitle{
+    padding: 15px;
+    margin-bottom: 15px;
+    display: inline-block;
+    h4 {
+        color: #4b4b4b;
+        margin: 0 0 8px 0;
+        font: 2rem/1.4 'Roboto Condensed', sans-serif; 
+        letter-spacing: 0.2rem;
+    }
+}     
+/*------------------------*/    
+/* Add fleet info */
+
+.addFleetInfoUnitBox{
+    align-items: stretch;
+    display: flex;
+    .addFleetInfoUnit{
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: #4b4b4b;
+        padding: 8px 8px 8px 8px;
+        box-shadow: 0px 0px 2px 0px #BDC3CE;
+        width: 100%;
+        position: relative;
+        ol{
+            margin-bottom: 0;
+            padding: 0 0 0 16px;
+            li{
+                padding: 0 0 6px 4px;
+            }
+        }
+    }
+    .addFleetInfoUnitTitle{ 
+        padding: 0.2rem 0 0.8rem 0;
+        font-size: 1rem;
+        margin: 0;
+        align-items: center; 
+        a{
+        color: #005395; 
+        }
+    } 
+}
+
+/*------------------------*/
+/* ======================================================================
+   View member details 
+   ====================================================================== */ 
+.viewMemberCtBox{
+    clear: both;
+}
+.vpPara{
+    color: #4B4B4B;
+    font: 1rem/1.6 'Roboto', sans-serif;
+    &.vpParaSingleLine{
+        margin: 0 0 0.5rem 0;
+    }
+    &.vpParaMultiLine{
+        margin: 0 0 1rem 0;
+        .vpParaLabel, .vpParaTextValue{
+            display: block;
+        }
+    }
+    .vpParaLabel{
+        font-weight:600;
+        font-family: 'Roboto Condensed', sans-serif;
+        letter-spacing: 0.03rem;
+        margin: 0 0.5rem 0 0;
+    }
+}
+.vpPrgSitesBox{
+    margin-bottom: 15px;
+    .vpPrgSitesBoxInner{
+        border-radius: 4px; 
+        border: 1px solid #ddd;
+        padding: 3px 8px;
+        min-height: 100%;
+    }
+} 
+.vpFormSectionTitle{
+    background: #f5f5f5;
+    color: #222;
+    padding: 8px;
+    margin: 0 0 15px 0;
+    font: 1.4rem/1.4 'Roboto Condensed', sans-serif;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    i{
+        font-size: 2rem;
+        vertical-align: middle;
+        margin-right: 0.5rem;
+    }
+}
+.vpFormSectionSubTitle{
+    text-transform: uppercase;
+    padding: 0.6rem 0; 
+    margin: 0;
+    color: #29343a;
+    font: 1.3rem/1.4 'Roboto Condensed', sans-serif;
+    letter-spacing: 0.02rem;
+}
+
+.vpPrgSitesBox ol{
+    margin: 0;
+    padding: 0 0 0 16px;
+    li{
+        padding: 0 0 6px 4px;
+    }
+}
+/*------------------------*/ 
